@@ -231,7 +231,6 @@ function game(user, computer){
     } else {
       return "it's a tie";
     }
-
   }
 }
 
