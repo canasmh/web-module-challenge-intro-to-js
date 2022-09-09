@@ -156,20 +156,20 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
 */  
 
 function hungryDog(weight, age) {
-  if (age < 1) {
+  if (age >= 1) {
     if (weight <= 5) {
       return 0.05 * weight;
-    } else if (6 <= weight <= 10) {
+    } else if (weight >= 6 && weight <= 10) {
       return 0.04 * weight;
-    } else if (11 <= weight <= 15) {
+    } else if (weight >= 11 && weight <= 15) {
       return 0.03 * weight;
     } else {
       return 0.02 * weight;
     }
   } else {
-    if (1/6 <= age <= 1/3) {
+    if (age >= 1/6 && age <= 1/3) {
       return 0.1 * weight;
-    } else if (4/12 <= age <= 7/12) {
+    } else if (age >= 4/12 && age <= 7/12) {
       return 0.05 * weight;
     } else if (age > 7/12) {
       return 0.04 * weight;
@@ -177,7 +177,7 @@ function hungryDog(weight, age) {
   }
 }
 
-console.log(hungryDog(30, 5))
+console.log(`Dog food amount ${hungryDog(15, 1)}`)
 
 
 
@@ -247,11 +247,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  return 0.621371 * km;
 }
 
-
+console.log(miles(1.60934))
 
 //Task 5b - Centimeters to Feet
 /*
@@ -261,9 +261,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48;
 }
+
+console.log(feet(30.48))
 
 
 
@@ -281,10 +283,16 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num) {
+      return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num - 1} bottles of soda on the wall`;
 }
 
+let startingNum = 10;
+
+while (startingNum > 0) {
+  console.log(annoyingSong(startingNum));
+  startingNum--;
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -301,8 +309,18 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+  if (score < 60) {
+    return 'you got an F';
+  } else if (score >= 60 && score <= 69) {
+    return 'you got a D';
+  } else if (score >= 70 && score <= 79) {
+    return 'you got a C';
+  } else if (score >= 80 && score <= 89) {
+    return 'you got a B';
+  } else if (score >= 90 && score <= 100) {
+    return 'you got an A';
+  }
 }
 
 
