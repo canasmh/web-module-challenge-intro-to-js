@@ -338,9 +338,20 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(inputString) {
+  let nVowels = 0;
+  let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+  for (let i = 0; i < vowels.length; i++) {
+    while (inputString.includes(vowels[i])) {
+      inputString = inputString.replace(vowels[i], '');
+      nVowels++;
+    }
+  }
+  return nVowels;
 }
+
+console.log(vowelCounter("Hello World broOoOeE"));
 
 
 
