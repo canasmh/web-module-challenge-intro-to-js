@@ -25,7 +25,7 @@ let votingAge = 19;
 if (votingAge >= 18) {
   console.log(true);
 } else {
-  console.log(false)
+  console.log(false);
 }
 
 
@@ -42,6 +42,15 @@ Do the following:
    HINT: no function required
 */
 
+let firstThing = 1;
+let secondThing = 2;
+
+if (firstThing === secondThing) {
+  firstThing = 'something else';
+}
+
+console.log(firstThing)
+
 
 
 
@@ -56,6 +65,12 @@ Do the following:
 
    HINT: look up the Number method
 */
+
+let str = "1999";
+let num = parseInt(str);
+
+console.log(num);
+
 
 
 
